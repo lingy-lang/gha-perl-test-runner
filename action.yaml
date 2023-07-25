@@ -1,0 +1,6 @@
+runs:
+  using: docker
+
+  image: docker://docker.io/ingy/gha-perl-test-runner:latest
+
+  entrypoint: perl-test-runner

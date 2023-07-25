@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e -u -o pipefail
+
+set -x
+
+cd perl/
+
+make dist
+
+cpanm --installdeps Lingy-*.tar.gz
+
+rm -f Lingy-*.tar.gz
+
+if [[ $GITHUB_JOB == *tmate* ]]; then
+  source debug-with-tmate.bash
+  exit
+fi
+
+yath -l -v test/
