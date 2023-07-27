@@ -1,7 +1,7 @@
 on:
   workflow_call:
     inputs:
-      runs_on:
+      runs-on:
         required: true
         type: string
       runner:
@@ -10,8 +10,7 @@ on:
 
 jobs:
   test:
-    # runs-on: inputs.runs_on
-    runs-on: ubuntu-22.04
+    runs-on: inputs.runs-on
 
     # Prevent two runs for one PR:
     if: github.event_name != 'pull_request' ||
