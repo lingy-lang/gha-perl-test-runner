@@ -10,8 +10,8 @@ on:
 
 jobs:
   test:
-    runs-on: inputs.runs_on
-    # runs-on: ubuntu-22.04
+    # runs-on: inputs.runs_on
+    runs-on: ubuntu-22.04
 
     # Prevent two runs for one PR:
     if: github.event_name != 'pull_request' ||
