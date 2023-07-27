@@ -1,9 +1,9 @@
 on:
   workflow_call:
     inputs:
-      runner:
-        required: true
-        type: string
+      runner: string
+#         required: true
+#         type: string
 
 jobs:
   test:
