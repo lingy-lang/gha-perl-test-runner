@@ -3,6 +3,7 @@ on:
     inputs:
       runner:
         required: true
+        type: string
 
 jobs:
   test:
