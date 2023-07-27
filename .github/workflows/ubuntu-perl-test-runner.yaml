@@ -1,14 +1,18 @@
 on:
   workflow_call:
     inputs:
-      runner: string
-#         required: true
-#         type: string
+      runs-on:
+        required: true
+        type: string
+      runner:
+        required: true
+        type: string
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
+    runs-on: inputs.runs-on
 
+    # Prevent two runs for one PR:
     if: github.event_name != 'pull_request' ||
       github.event.pull_request.head.repo.full_name !=
       github.event.pull_request.base.repo.full_name
